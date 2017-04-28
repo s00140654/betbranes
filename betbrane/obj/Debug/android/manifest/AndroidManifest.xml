@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="betbrane.betbrane" android:versionCode="1" android:versionName="1.0">
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="16" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <application android:label="betbrane" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon" android:debuggable="true">
+    <activity android:icon="@drawable/icon" android:label="betbrane" android:name="md53ccfba0e8a95caafae9dff8950118dc6.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="CashOut" android:name="md572097d6d398aff1aecfdcc98a9a24aa4.CashOut" />
+    <activity android:label="Web View Sample" android:theme="@android:style/Theme.NoTitleBar" android:name="md572097d6d398aff1aecfdcc98a9a24aa4.LogIn">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="Show Trades" android:name="md572097d6d398aff1aecfdcc98a9a24aa4.ShowTrades" />
+    <activity android:label="SubmitTrades" android:name="md572097d6d398aff1aecfdcc98a9a24aa4.SubmitTrades" />
+    <activity android:label="ViewSportsEvents" android:name="md572097d6d398aff1aecfdcc98a9a24aa4.ViewSportsEvents" />
+    <activity android:label="ViewSports" android:name="md572097d6d398aff1aecfdcc98a9a24aa4.ViewEvents" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="betbrane.betbrane.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.betbrane.betbrane" />
+      </intent-filter>
+    </receiver>
+  </application>
+</manifest>

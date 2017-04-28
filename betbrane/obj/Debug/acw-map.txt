@@ -1,0 +1,32 @@
+betbrane.MainActivity, betbrane;md53ccfba0e8a95caafae9dff8950118dc6.MainActivity
+betbrane.MainActivity, betbrane, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md53ccfba0e8a95caafae9dff8950118dc6.MainActivity
+betbrane.MainActivity;md53ccfba0e8a95caafae9dff8950118dc6.MainActivity
+betbrane.MainActivity;md53ccfba0e8a95caafae9dff8950118dc6.MainActivity
+betbrane.Resources.Activities.CashOut, betbrane;md572097d6d398aff1aecfdcc98a9a24aa4.CashOut
+betbrane.Resources.Activities.CashOut, betbrane, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md572097d6d398aff1aecfdcc98a9a24aa4.CashOut
+betbrane.Resources.Activities.CashOut;md572097d6d398aff1aecfdcc98a9a24aa4.CashOut
+betbrane.resources.activities.CashOut;md572097d6d398aff1aecfdcc98a9a24aa4.CashOut
+betbrane.Resources.Activities.LogIn, betbrane;md572097d6d398aff1aecfdcc98a9a24aa4.LogIn
+betbrane.Resources.Activities.LogIn, betbrane, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md572097d6d398aff1aecfdcc98a9a24aa4.LogIn
+betbrane.Resources.Activities.LogIn;md572097d6d398aff1aecfdcc98a9a24aa4.LogIn
+betbrane.resources.activities.LogIn;md572097d6d398aff1aecfdcc98a9a24aa4.LogIn
+betbrane.Resources.Activities.LogIn/HelloWebViewClient, betbrane;md572097d6d398aff1aecfdcc98a9a24aa4.LogIn_HelloWebViewClient
+betbrane.Resources.Activities.LogIn+HelloWebViewClient, betbrane, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md572097d6d398aff1aecfdcc98a9a24aa4.LogIn_HelloWebViewClient
+betbrane.Resources.Activities.LogIn.HelloWebViewClient;md572097d6d398aff1aecfdcc98a9a24aa4.LogIn_HelloWebViewClient
+betbrane.resources.activities.LogIn_HelloWebViewClient;md572097d6d398aff1aecfdcc98a9a24aa4.LogIn_HelloWebViewClient
+betbrane.Resources.Activities.ShowTrades, betbrane;md572097d6d398aff1aecfdcc98a9a24aa4.ShowTrades
+betbrane.Resources.Activities.ShowTrades, betbrane, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md572097d6d398aff1aecfdcc98a9a24aa4.ShowTrades
+betbrane.Resources.Activities.ShowTrades;md572097d6d398aff1aecfdcc98a9a24aa4.ShowTrades
+betbrane.resources.activities.ShowTrades;md572097d6d398aff1aecfdcc98a9a24aa4.ShowTrades
+betbrane.Resources.Activities.SubmitTrades, betbrane;md572097d6d398aff1aecfdcc98a9a24aa4.SubmitTrades
+betbrane.Resources.Activities.SubmitTrades, betbrane, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md572097d6d398aff1aecfdcc98a9a24aa4.SubmitTrades
+betbrane.Resources.Activities.SubmitTrades;md572097d6d398aff1aecfdcc98a9a24aa4.SubmitTrades
+betbrane.resources.activities.SubmitTrades;md572097d6d398aff1aecfdcc98a9a24aa4.SubmitTrades
+betbrane.Resources.Activities.ViewSportsEvents, betbrane;md572097d6d398aff1aecfdcc98a9a24aa4.ViewSportsEvents
+betbrane.Resources.Activities.ViewSportsEvents, betbrane, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md572097d6d398aff1aecfdcc98a9a24aa4.ViewSportsEvents
+betbrane.Resources.Activities.ViewSportsEvents;md572097d6d398aff1aecfdcc98a9a24aa4.ViewSportsEvents
+betbrane.resources.activities.ViewSportsEvents;md572097d6d398aff1aecfdcc98a9a24aa4.ViewSportsEvents
+betbrane.Resources.Activities.ViewEvents, betbrane;md572097d6d398aff1aecfdcc98a9a24aa4.ViewEvents
+betbrane.Resources.Activities.ViewEvents, betbrane, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md572097d6d398aff1aecfdcc98a9a24aa4.ViewEvents
+betbrane.Resources.Activities.ViewEvents;md572097d6d398aff1aecfdcc98a9a24aa4.ViewEvents
+betbrane.resources.activities.ViewEvents;md572097d6d398aff1aecfdcc98a9a24aa4.ViewEvents
