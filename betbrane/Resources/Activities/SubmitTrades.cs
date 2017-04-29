@@ -13,6 +13,8 @@ using betbrane.Models;
 using Newtonsoft.Json;
 using betbrane.Resources.Back_Office_Work;
 using betbrane.Rest;
+using Java.Lang;
+using System.Threading;
 
 namespace betbrane.Resources.Activities
 {
@@ -20,18 +22,30 @@ namespace betbrane.Resources.Activities
     public class SubmitTrades : Activity
     {
         //Timer timer = new Timer();
+        static string message;
+        int increment = 0;
+        //Stake is hard coded in case my account gets cleaned out due to a coding error, in paractice bank would be a stop
+        //loss, but for the case of testing there will be ony one hard coded stake of €
+        static double stake = 2;
+        static double bank;
+        int amtOfbets = Convert.ToInt32( Java.Lang.Math.Floor(bank/stake));
+        
 
+
+        MarketCatalogue mc = new MarketCatalogue();
         PricesProcessing pc = new PricesProcessing();
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.SubmitTrades);
-
+            var tv = new TextView(this);
+            tv.Text = "message";
+            LinearLayout ll = new LinearLayout(this);
+            ll.AddView(tv);
             SportsEvent sportsEvent = new SportsEvent();
 //string selectedEvent = Intent.GetStringExtra("selectedEvent") ?? "Data not available";
-            MarketCatalogue mc = new MarketCatalogue();
-            var displayUserName = FindViewById<TextView>(Resource.Id.displaySubmitTradesUserName);
-            displayUserName.Text = "You are logged in as Gerry";
+            
+            
             string json = (Intent.GetStringExtra("selectedEvent") ?? "Data not available");
             mc = JsonConvert.DeserializeObject<MarketCatalogue>(json);
 
@@ -42,10 +56,10 @@ namespace betbrane.Resources.Activities
 
 
             var textBankAmount = FindViewById<TextView>(Resource.Id.textBankAmount);
-            Trade trade = new Trade();
-            trade.Bank = textBankAmount.Text;
-            sportsEvent.Trade = trade;
-            double stake = double.Parse(textBankAmount.Text);
+            //Trade trade = new Trade();
+            //trade.Bank = textBankAmount.Text;
+            //sportsEvent.Trade = trade;
+            bank = double.Parse(textBankAmount.Text);
 
             submitBankButton.Click += (sender, e) =>
             {
@@ -55,20 +69,42 @@ namespace betbrane.Resources.Activities
             };
 
             confirmBankButton.Click += (IntentSender, e) => {
+                callProcess();
+                System.Threading.Thread t1 = new System.Threading.Thread(new ThreadStart(callProcess));
+                t1.Start();
+                //Intent intent = new Intent(this, typeof(ShowTrades));
+                
+                //intent.PutExtra("key", (message));
 
-                pc.ProcessMarketData(stake, buildMarketBookRequest(mc));
-                Intent intent = new Intent(this, typeof(ShowTrades));
-                intent.PutExtra("key", JsonConvert.SerializeObject(sportsEvent));
-                StartActivity(intent);
+                //Intent intent = new Intent(this, typeof(ShowTrades));
+                ////intent.PutExtra("key", JsonConvert.SerializeObject(sportsEvent));
+                //StartActivity(typeof(ShowTrades));
             };
 
             cancelTradesButton.Click += (sender, e) => {
+                
                 Intent intent = new Intent(this, typeof(MainActivity));
 
                 StartActivity(intent);
             };
 
 
+
+        }
+
+        private void callProcess()
+        {
+            var mess = FindViewById<TextView>(Resource.Id.messageT);
+            string i = Convert.ToString(increment);
+            message = "Attempt " + i + "To get Matched";
+            mess.Text = (message);
+            
+
+            System.Threading.Thread.Sleep(10000);
+            pc.ProcessMarketData(stake, buildMarketBookRequest(mc));
+            increment++;
+            callProcess();
+            //ShowTrades st = new ShowTrades();
 
         }
 
@@ -79,7 +115,7 @@ namespace betbrane.Resources.Activities
             MarketBookParams mbrParams = new MarketBookParams();
             PriceProjection pro = new PriceProjection();
             var ids = new List<string>();
-            var priceData = new List<String>();
+            var priceData = new List<string>();
             ids.Add(mc.marketId);
             mbrParams.marketIds = ids;
             priceData.Add("EX_BEST_OFFERS");

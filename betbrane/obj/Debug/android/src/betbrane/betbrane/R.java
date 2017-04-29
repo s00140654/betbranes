@@ -19,8 +19,7 @@ public final class R {
         public static final int ShowTradesViewUserName=0x7f06000a;
         public static final int cancelBank=0x7f060015;
         public static final int cashOutButton=0x7f060001;
-        public static final int displayEventInfo=0x7f06000f;
-        public static final int displaySubmitTrades=0x7f06000e;
+        public static final int displayEventInfo=0x7f06000e;
         public static final int displaySubmitTradesUserName=0x7f06000d;
         public static final int editEnterBank=0x7f060010;
         public static final int editGap=0x7f060012;
@@ -30,6 +29,7 @@ public final class R {
         public static final int listViewSportsEvents=0x7f060019;
         public static final int listViwShowTrades=0x7f06000b;
         public static final int logIn=0x7f060007;
+        public static final int messageT=0x7f06000f;
         public static final int progressBar=0x7f060008;
         public static final int submitBank=0x7f060013;
         public static final int textBankAmount=0x7f060011;

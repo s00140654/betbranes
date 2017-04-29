@@ -17,7 +17,7 @@ namespace betbrane.Resources.Back_Office_Work
 {
     class PricesProcessing
     {
-
+        //Bank requires logic for multiple trades 
         public static double Bank;
         public class evalRunner
         {
@@ -49,17 +49,21 @@ namespace betbrane.Resources.Back_Office_Work
         List<AvailableToBack> a2b = new List<AvailableToBack>();
         RESTService rs = new RESTService();
         List<Order> orderList = new List<Order>();
-
+        bool isActive;
         public void ProcessMarketData(double bank, MarketBookResponse resp)
         {
             Bank = bank;
-            checkMarket(resp);
-            foreach (MarketBookRunnerClass m in resp.result[0].runners) { runners.Add(m); }
+           
+            //foreach (MarketBookRunnerClass m in resp.result[0].runners) { runners.Add(m); }
             //  foreach(AvailableToLay a in runners.)
 
             string marketId = resp.result[0].marketId;
             foreach (MarketBookRunnerClass r in resp.result[0].runners)
             {
+                //var check = .ToList().Where(rr => rr.sizeRemaining > 0);
+                if (r.orders == null) { checkMarket(resp); }
+                
+
                 if (r.orders != null)
                 {
                     var openOrders = r.orders.ToList().Where(o => o.sizeRemaining > 0);
@@ -84,13 +88,13 @@ namespace betbrane.Resources.Back_Office_Work
                             }
                         }
                         //Price is now bigger than when originally matched take a loss
-                        if (priceMatched > priceAvailableToBack && (priceMatched / priceAvailableToBack) >= 1.08)
-                        {
-                            newStake = Math.Round(((stakeAmt * priceMatched) + stakeAmt) / ((priceAvailableToBack) + 1), 2);
-                            side = "BACK";
-                            double nse = Math.Round(((stakeAmt * priceMatched) + stakeAmt) / ((priceAvailableToBack) + 1), 2);
-                            PlaceOrdersResponse por = PlaceOrder(selectionId, marketId, side, newStake, priceAvailableToLay);
-                        }
+                        //if (priceMatched > priceAvailableToBack && (priceMatched / priceAvailableToBack) >= 1.08)
+                        //{
+                        //    newStake = Math.Round(((stakeAmt * priceMatched) + stakeAmt) / ((priceAvailableToBack) + 1), 2);
+                        //    side = "BACK";
+                        //    double nse = Math.Round(((stakeAmt * priceMatched) + stakeAmt) / ((priceAvailableToBack) + 1), 2);
+                        //    PlaceOrdersResponse por = PlaceOrder(selectionId, marketId, side, newStake, priceAvailableToLay);
+                        //}
                     }
 
                 }
@@ -121,7 +125,7 @@ namespace betbrane.Resources.Back_Office_Work
                 var als = r.ex.availableToLay.ToList().Sum(p => p.size);
                 var WeightOfMoney = abs / als;
                 var Traded = r.ex.tradedVolume;
-                if (WeightOfMoney <= .7) { PlaceOrder(r.selectionId, resp.result[0].marketId, "BACK", r.ex.availableToBack[0].price, 2); }
+                if (WeightOfMoney <= .05) { PlaceOrder(r.selectionId, resp.result[0].marketId, "BACK",2 , r.ex.availableToBack[0].price); }
             }
         }
 

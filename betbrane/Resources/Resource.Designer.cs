@@ -75,11 +75,8 @@ namespace betbrane
 			// aapt resource value: 0x7f060001
 			public const int cashOutButton = 2131099649;
 			
-			// aapt resource value: 0x7f06000f
-			public const int displayEventInfo = 2131099663;
-			
 			// aapt resource value: 0x7f06000e
-			public const int displaySubmitTrades = 2131099662;
+			public const int displayEventInfo = 2131099662;
 			
 			// aapt resource value: 0x7f06000d
 			public const int displaySubmitTradesUserName = 2131099661;
@@ -107,6 +104,9 @@ namespace betbrane
 			
 			// aapt resource value: 0x7f060007
 			public const int logIn = 2131099655;
+			
+			// aapt resource value: 0x7f06000f
+			public const int messageT = 2131099663;
 			
 			// aapt resource value: 0x7f060008
 			public const int progressBar = 2131099656;

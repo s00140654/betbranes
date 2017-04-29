@@ -12,13 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/displaySubmitTradesUserName"
         android:editable="false" />
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="20sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/displaySubmitTrades"
-        android:editable="false" />
+    
     <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="20sp"
@@ -26,6 +20,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/displayEventInfo"
         android:editable="false" />
+  <EditText
+       android:textAppearance="?android:attr/textAppearanceMedium"
+       android:textSize="20sp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/messageT"
+        android:textColor="@android:color/white"
+       android:editable="false" />
     <TextView
         android:text="Enter Your Bank"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -37,7 +39,7 @@
         android:textAlignment="center"
         android:textColor="@android:color/white" />
     <EditText
-        android:text="10.00"
+        android:text="2.00"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:textSize="20sp"
@@ -52,6 +54,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/editGap"
         android:textSize="20sp"
+        android:text="mess"
         android:editable="false"
         android:textAlignment="center"
         android:textColor="@android:color/white" />
@@ -75,4 +78,5 @@
         android:textSize="20sp"
         android:visibility="invisible"
         android:id="@+id/cancelBank" />
+ 
 </LinearLayout>
